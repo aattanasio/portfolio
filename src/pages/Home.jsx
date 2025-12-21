@@ -78,7 +78,7 @@ const Home = () => {
                             <div className="timeline-content">
                                 <h3>Software Developer</h3>
                                 <span className="institution">IDS Georadar S.r.l. - Pisa, Italy</span>
-                                <span className="period">11/2018-03/2019</span>
+                                <span className="period">11/2018 - 03/2019</span>
                                 <p>
                                     Developed control interface for a mechanical arm attachment used in
                                     industrial testing equipment within an agile team environment.

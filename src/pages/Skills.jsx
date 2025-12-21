@@ -32,6 +32,7 @@ const Skills = () => {
         <div className="page-container">
             <section className="section">
                 <div className="container">
+                    {/*
                     <h1 className="page-title">Certifications</h1>
                     <div className="certifications">
                         <div className="cert-grid">
@@ -52,9 +53,12 @@ const Skills = () => {
                             </div>
                         </div>
                     </div>
+                    */}
+
+                    <h1 className="page-title">Skills & Expertise</h1>
 
                     <div className="skills-container">
-                        <h2 className="section-title">Skills & Expertise</h2>
+
                         {Object.entries(skillsData).map(([category, data]) => (
                             <div key={category} className="skill-category-card">
                                 <div className="skill-header">
