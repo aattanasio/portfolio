@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaFilePdf } from 'react-icons/fa'
 import BachelorThesis from '../assets/thesis-bachelor.pdf'
 import MasterThesis from '../assets/thesis-master.pdf'
+import introVideo from '../assets/intro.mp4'
 
 const Home = () => {
     const [showPDF, setShowPDF] = useState(null)
@@ -19,12 +20,21 @@ const Home = () => {
             {/* Hero Section */}
             <section className="hero-section">
                 <div className="hero-content">
-                    <h1 className="hero-title">
-                        Hi, I'm <span className="highlight">Asja Attanasio</span>
-                    </h1>
+                    <div className="hero-video-container">
+                        <video
+                            className="hero-video"
+                            autoPlay
+                            muted
+                            playsInline
+                        >
+                            <source src={introVideo} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <p className="hero-subtitle">Software Engineer | Developer | Problem Solver</p>
                 </div>
             </section>
+
 
             {/* Education Section */}
             <section className="section">
@@ -110,6 +120,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
 
             {/* PDF Modal */}
             {showPDF && (
