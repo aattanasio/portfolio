@@ -22,7 +22,7 @@ const Navbar = () => {
 
                 <button
                     className="menu-toggle"
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    // onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Toggle menu"
                 >
                     <span></span>
@@ -34,35 +34,35 @@ const Navbar = () => {
                     <NavLink
                         to="/"
                         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                        onClick={() => setMenuOpen(false)}
+                    // onClick={() => setMenuOpen(false)}
                     >
                         Home
                     </NavLink>
                     <NavLink
                         to="/projects"
                         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                        onClick={() => setMenuOpen(false)}
+                    // onClick={() => setMenuOpen(false)}
                     >
                         Projects
                     </NavLink>
                     <NavLink
                         to="/skills"
                         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                        onClick={() => setMenuOpen(false)}
+                    // onClick={() => setMenuOpen(false)}
                     >
                         Skills
                     </NavLink>
                     <NavLink
                         to="/contact"
                         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                        onClick={() => setMenuOpen(false)}
+                    // onClick={() => setMenuOpen(false)}
                     >
                         Contact
                     </NavLink>
                     <NavLink
                         to="/cv"
                         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                        onClick={() => setMenuOpen(false)}
+                    // onClick={() => setMenuOpen(false)}
                     >
                         CV
                     </NavLink>
