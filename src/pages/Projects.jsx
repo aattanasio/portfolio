@@ -93,7 +93,7 @@ const Projects = () => {
                                             href={project.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="thesis-button"
+                                            className="fancy-button"
                                         >
                                             <FaGithub size={18} />
                                             GitHub
@@ -104,7 +104,7 @@ const Projects = () => {
                                             href={project.demo}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="thesis-button demo-button"
+                                            className="fancy-button demo-button"
                                         >
                                             <FaExternalLinkAlt size={16} />
                                             Live Demo

@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useTheme } from '../context/ThemeContext'
-import { FaFilePdf } from 'react-icons/fa'
+import { FaFilePdf, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { MdEmail, MdLocationOn } from 'react-icons/md'
 import BachelorThesis from '../assets/thesis-bachelor.pdf'
 import MasterThesis from '../assets/thesis-master.pdf'
 import introVideoLight from '../assets/intro-light.mp4'
@@ -17,6 +18,46 @@ const Home = () => {
     const closePDF = () => {
         setShowPDF(null)
     }
+
+    useEffect(() => {
+        if (showPDF) {
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+            const navbar = document.querySelector('.navbar')
+            if (navbar) {
+                navbar.style.transition = 'none'
+                navbar.style.paddingRight = `${scrollbarWidth}px`
+                setTimeout(() => {
+                    navbar.style.transition = ''
+                }, 0)
+            }
+            document.body.style.overflow = 'hidden'
+            document.body.style.paddingRight = `${scrollbarWidth}px`
+        } else {
+            const navbar = document.querySelector('.navbar')
+            if (navbar) {
+                navbar.style.transition = 'none'
+                navbar.style.paddingRight = '0px'
+                setTimeout(() => {
+                    navbar.style.transition = ''
+                }, 0)
+            }
+            document.body.style.overflow = 'unset'
+            document.body.style.paddingRight = '0px'
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset'
+            document.body.style.paddingRight = '0px'
+            const navbar = document.querySelector('.navbar')
+            if (navbar) {
+                navbar.style.transition = 'none'
+                navbar.style.paddingRight = '0px'
+                setTimeout(() => {
+                    navbar.style.transition = ''
+                }, 0)
+            }
+        }
+    }, [showPDF])
 
     return (
         <div className="page-container">
@@ -51,7 +92,7 @@ const Home = () => {
                                 <span className="period">2023 - 2025</span>
                                 <p>Completed a mixed academic track with a focus on practical software development and AI-related methodologies.</p>
                                 <button
-                                    className="thesis-button"
+                                    className="fancy-button"
                                     onClick={() => openPDF(MasterThesis)}
                                 >
                                     <FaFilePdf size={18} />
@@ -68,7 +109,7 @@ const Home = () => {
                                 <span className="period">2019 - 2023</span>
                                 <p>Foundation in computer science, algorithms, and software development.</p>
                                 <button
-                                    className="thesis-button"
+                                    className="fancy-button"
                                     onClick={() => openPDF(BachelorThesis)}
                                 >
                                     <FaFilePdf size={18} />
@@ -123,6 +164,41 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Contact Information Section */}
+            <section className="section">
+                <div className="container">
+                    <h2 className="section-title">Contact me</h2>
+                    <div className="contact-info-section">
+                        <div className="contact-buttons">
+                            <a
+                                href="mailto:asja.attanasio@gmail.com"
+                                className="contact-button"
+                            >
+                                <MdEmail size={20} />
+                                <span>Email</span>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/asjaattanasio/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-button"
+                            >
+                                <FaLinkedin size={20} />
+                                <span>LinkedIn</span>
+                            </a>
+                            <a
+                                href="https://github.com/aattanasio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-button"
+                            >
+                                <FaGithub size={20} />
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* PDF Modal */}
             {showPDF && (

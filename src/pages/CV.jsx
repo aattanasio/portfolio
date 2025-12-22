@@ -1,27 +1,82 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { FaFilePdf } from 'react-icons/fa'
+import CVPdf from '../assets/cv.pdf'
 
 const CV = () => {
+    const [showPDF, setShowPDF] = useState(false)
+
+    const openPDF = () => {
+        setShowPDF(true)
+    }
+
+    const closePDF = () => {
+        setShowPDF(false)
+    }
+
+    useEffect(() => {
+        if (showPDF) {
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+            const navbar = document.querySelector('.navbar')
+            if (navbar) {
+                navbar.style.transition = 'none'
+                navbar.style.paddingRight = `${scrollbarWidth}px`
+                setTimeout(() => {
+                    navbar.style.transition = ''
+                }, 0)
+            }
+            document.body.style.overflow = 'hidden'
+            document.body.style.paddingRight = `${scrollbarWidth}px`
+        } else {
+            const navbar = document.querySelector('.navbar')
+            if (navbar) {
+                navbar.style.transition = 'none'
+                navbar.style.paddingRight = '0px'
+                setTimeout(() => {
+                    navbar.style.transition = ''
+                }, 0)
+            }
+            document.body.style.overflow = 'unset'
+            document.body.style.paddingRight = '0px'
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset'
+            document.body.style.paddingRight = '0px'
+            const navbar = document.querySelector('.navbar')
+            if (navbar) {
+                navbar.style.transition = 'none'
+                navbar.style.paddingRight = '0px'
+                setTimeout(() => {
+                    navbar.style.transition = ''
+                }, 0)
+            }
+        }
+    }, [showPDF])
+
     return (
         <div className="page-container">
             <section className="section">
                 <div className="container cv-container">
                     <div className="cv-header">
                         <h1 className="page-title">Curriculum Vitae</h1>
-                        <button className="btn btn-primary">Download PDF</button>
+                        <button className="fancy-button" onClick={openPDF}>
+                            <FaFilePdf size={18} />
+                            View PDF
+                        </button>
                     </div>
 
                     <div className="cv-section">
                         <h2>Personal Information</h2>
                         <div className="cv-content">
-                            <p><strong>Name:</strong> Your Full Name</p>
+                            <p><strong>Name:</strong> Asja Attanasio</p>
                             <p><strong>Location:</strong> Milan, Italy</p>
-                            <p><strong>Email:</strong> your.email@example.com</p>
-                            <p><strong>Phone:</strong> +39 123 456 7890</p>
-                            <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
-                            <p><strong>GitHub:</strong> github.com/yourusername</p>
+                            <p><strong>Email:</strong> <a href="mailto:asja.attanasio@gmail.com">asja.attanasio@gmail.com</a></p>
+                            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/asjaattanasio/" target="_blank" rel="noopener noreferrer">linkedin.com/in/asjaattanasio</a></p>
+                            <p><strong>GitHub:</strong> <a href="https://github.com/aattanasio" target="_blank" rel="noopener noreferrer">github.com/aattanasio</a></p>
                         </div>
                     </div>
 
+                    {/*}
                     <div className="cv-section">
                         <h2>Professional Summary</h2>
                         <div className="cv-content">
@@ -33,80 +88,61 @@ const CV = () => {
                             </p>
                         </div>
                     </div>
-
-                    <div className="cv-section">
-                        <h2>Work Experience</h2>
-                        <div className="cv-item">
-                            <div className="cv-item-header">
-                                <h3>Senior Frontend Developer</h3>
-                                <span className="cv-period">2022 - Present</span>
-                            </div>
-                            <p className="cv-company">Tech Company Inc. | Milan, Italy</p>
-                            <ul className="cv-list">
-                                <li>Led development of responsive web applications using React and TypeScript</li>
-                                <li>Mentored team of 5 junior developers, improving code quality by 40%</li>
-                                <li>Implemented CI/CD pipeline, reducing deployment time by 60%</li>
-                                <li>Architected scalable component library used across 10+ projects</li>
-                                <li>Optimized application performance, achieving 95+ Lighthouse scores</li>
-                            </ul>
-                        </div>
-
-                        <div className="cv-item">
-                            <div className="cv-item-header">
-                                <h3>Full Stack Developer</h3>
-                                <span className="cv-period">2020 - 2022</span>
-                            </div>
-                            <p className="cv-company">StartUp Co. | Remote</p>
-                            <ul className="cv-list">
-                                <li>Developed 10+ client projects using MERN stack</li>
-                                <li>Increased user engagement by 60% through UX improvements</li>
-                                <li>Implemented real-time features with WebSockets</li>
-                                <li>Optimized database queries, reducing response time by 50%</li>
-                                <li>Collaborated with cross-functional teams in agile environment</li>
-                            </ul>
-                        </div>
-
-                        <div className="cv-item">
-                            <div className="cv-item-header">
-                                <h3>Junior Developer</h3>
-                                <span className="cv-period">2019 - 2020</span>
-                            </div>
-                            <p className="cv-company">Digital Agency | Milan, Italy</p>
-                            <ul className="cv-list">
-                                <li>Contributed to various web development projects</li>
-                                <li>Learned React, Node.js, and modern development practices</li>
-                                <li>Improved testing coverage from 20% to 80%</li>
-                                <li>Participated in code reviews and pair programming</li>
-                            </ul>
-                        </div>
-                    </div>
+                    */}
 
                     <div className="cv-section">
                         <h2>Education</h2>
                         <div className="cv-item">
                             <div className="cv-item-header">
-                                <h3>Master's in Computer Science</h3>
-                                <span className="cv-period">2020 - 2022</span>
+                                <h3>Master's in Computer Science Engineering</h3>
+                                <span className="cv-period">2023 - 2025</span>
                             </div>
-                            <p className="cv-company">University of Technology | Milan, Italy</p>
+                            <p className="cv-company">Polytechnic University of Milan | Milan, Italy</p>
+                            <p>Completed a mixed academic track with a focus on practical software development and AI-related methodologies.</p>
+                        </div>
+
+                        <div className="cv-item">
+                            <div className="cv-item-header">
+                                <h3>Bachelor's in Computer Engineering</h3>
+                                <span className="cv-period">2019 - 2023</span>
+                            </div>
+                            <p className="cv-company">University of Pisa | Pisa, Italy</p>
+                            <p>Foundation in computer science, algorithms, and software development.</p>
+                        </div>
+                    </div>
+
+                    <div className="cv-section">
+                        <h2>School-To-Work Experience</h2>
+                        <div className="cv-item">
+                            <div className="cv-item-header">
+                                <h3>Software Developer</h3>
+                                <span className="cv-period">11/2018 - 03/2019</span>
+                            </div>
+                            <p className="cv-company">IDS Georadar S.r.l. | Pisa, Italy</p>
+                            <p>
+                                Developed control interface for a mechanical arm attachment used in
+                                industrial testing equipment within an agile team environment.
+                            </p>
                             <ul className="cv-list">
-                                <li>Specialized in Software Engineering and AI</li>
-                                <li>GPA: 3.9/4.0 - Graduated with honors</li>
-                                <li>Thesis: Machine Learning in Web Applications</li>
-                                <li>Dean's List all semesters</li>
+                                <li>Built responsive Qt-based control interface with real-time feedback</li>
+                                <li>Implemented multithreaded architecture for system stability</li>
+                                <li>Collaborated using Git and Scrum in 2-week sprints</li>
                             </ul>
                         </div>
 
                         <div className="cv-item">
                             <div className="cv-item-header">
-                                <h3>Bachelor's in Software Engineering</h3>
-                                <span className="cv-period">2016 - 2020</span>
+                                <h3>Print Production Assistant</h3>
+                                <span className="cv-period">07/2018 - 08/2018</span>
                             </div>
-                            <p className="cv-company">Tech University | Milan, Italy</p>
+                            <p className="cv-company">Pixel & Co. | Msida, Malta</p>
+                            <p>
+                                International work experience in print production.
+                            </p>
                             <ul className="cv-list">
-                                <li>GPA: 3.7/4.0</li>
-                                <li>Member of Computer Science Society</li>
-                                <li>Hackathon Winner 2019</li>
+                                <li>Gained cross-cultural work experience in an international setting</li>
+                                <li>Managed client communications and design specifications</li>
+                                <li>Developed adaptability working in a new cultural environment</li>
                             </ul>
                         </div>
                     </div>
@@ -115,20 +151,20 @@ const CV = () => {
                         <h2>Technical Skills</h2>
                         <div className="cv-skills-grid">
                             <div>
-                                <h4>Frontend</h4>
-                                <p>React, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS, Redux, Next.js</p>
+                                <h4>Programming Languages</h4>
+                                <p>JavaScript, Python, Java, C, C++, PHP, Assembly, Verilog</p>
                             </div>
                             <div>
-                                <h4>Backend</h4>
-                                <p>Node.js, Express, Python, Django, PostgreSQL, MongoDB, REST APIs, GraphQL</p>
+                                <h4>Web and Mobile</h4>
+                                <p>React, HTML5, CSS3, Node.js, Express, Flutter, Node-RED, JSON, XML</p>
                             </div>
                             <div>
-                                <h4>Tools & DevOps</h4>
-                                <p>Git, Docker, AWS, CI/CD, Jenkins, Kubernetes, Linux, Nginx</p>
+                                <h4>Databases and Frameworks</h4>
+                                <p>SQL, MySQL, Firestore, Apache Spark, Akka, ContikiNG, MQTT, Agile/Scrum</p>
                             </div>
                             <div>
-                                <h4>Other</h4>
-                                <p>Agile/Scrum, Testing (Jest, Cypress), SEO, Performance Optimization</p>
+                                <h4>Development Tools</h4>
+                                <p>Git, Visual Studio, GCC, NetBeans, Postman, Figma, MATLAB, MS Office, LaTeX</p>
                             </div>
                         </div>
                     </div>
@@ -136,9 +172,17 @@ const CV = () => {
                     <div className="cv-section">
                         <h2>Certifications</h2>
                         <ul className="cv-list">
-                            <li>AWS Certified Solutions Architect - Amazon Web Services (2023)</li>
-                            <li>React Advanced Certification - Meta (2022)</li>
-                            <li>Full Stack Web Development - freeCodeCamp (2021)</li>
+                            <li>Scaling Networks - Cisco CCNA R&S (2019)</li>
+                            <li>Routing and Switching Essential - Cisco CCNA R&S (2018)</li>
+                            <li>Introduction to Networks - Cisco CCNA R&S (2017)</li>
+                        </ul>
+                    </div>
+
+                    <div className="cv-section">
+                        <h2>Volunteering</h2>
+                        <ul className="cv-list">
+                            <li>Ambulance Service (2018 – 2022)</li>
+                            <li>UNICEF (2017 – 2018)</li>
                         </ul>
                     </div>
 
@@ -146,12 +190,28 @@ const CV = () => {
                         <h2>Languages</h2>
                         <ul className="cv-list">
                             <li>Italian - Native</li>
-                            <li>English - Fluent (C1)</li>
-                            <li>Spanish - Intermediate (B1)</li>
+                            <li>English - Cambridge FCE scored at C1 Level</li>
+                            <li>German - Beginner</li>
                         </ul>
                     </div>
                 </div>
             </section>
+
+            {/* PDF Modal */}
+            {showPDF && (
+                <div className="pdf-modal" onClick={closePDF}>
+                    <div className="pdf-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="pdf-close-button" onClick={closePDF}>
+                            ✕
+                        </button>
+                        <iframe
+                            src={CVPdf}
+                            title="CV PDF"
+                            className="pdf-iframe"
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

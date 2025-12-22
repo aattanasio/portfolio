@@ -2,29 +2,17 @@ import React from 'react'
 
 const Skills = () => {
     const skillsData = {
-        'Frontend Development': {
-            skills: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Redux', 'Next.js'],
-            level: 95
+        'Programming Languages': {
+            skills: ['JavaScript', 'Python', 'Java', 'C', 'C++', 'PHP', 'Assembly', 'Verilog'],
         },
-        'Backend Development': {
-            skills: ['Node.js', 'Express', 'Python', 'Django', 'PostgreSQL', 'MongoDB', 'REST APIs', 'GraphQL'],
-            level: 85
+        'Web and Mobile': {
+            skills: ['React', 'HTML5', 'CSS3', 'Node.js', 'Express', 'Flutter', 'Node-RED', 'JSON', 'XML'],
         },
-        'Tools & DevOps': {
-            skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Jenkins', 'Kubernetes', 'Linux', 'Nginx'],
-            level: 80
+        'Databases and Frameworks': {
+            skills: ['SQL', 'MySQL', 'Firestore', 'Apache Spark', 'Akka', 'ContikiNG', 'MQTT', 'Agile/Scrum'],
         },
-        'Design & UI/UX': {
-            skills: ['Figma', 'Adobe XD', 'Responsive Design', 'Accessibility', 'Wireframing', 'Prototyping'],
-            level: 75
-        },
-        'Mobile Development': {
-            skills: ['React Native', 'iOS', 'Android', 'Flutter', 'Progressive Web Apps'],
-            level: 70
-        },
-        'Other': {
-            skills: ['Agile/Scrum', 'Testing (Jest, Cypress)', 'SEO', 'Performance Optimization', 'Security Best Practices'],
-            level: 85
+        'Development Tools': {
+            skills: ['Git', 'Visual Studio', 'GCC', 'NetBeans', 'Postman', 'Figma', 'MATLAB', 'MS Office', 'LaTeX'],
         }
     }
 
@@ -56,20 +44,13 @@ const Skills = () => {
                     */}
 
                     <h1 className="page-title">Skills & Expertise</h1>
+                    <p className="page-subtitle">Technical expertise in programming languages, frameworks, tools, and technologies.</p>
 
                     <div className="skills-container">
-
                         {Object.entries(skillsData).map(([category, data]) => (
                             <div key={category} className="skill-category-card">
                                 <div className="skill-header">
                                     <h3>{category}</h3>
-                                    <span className="skill-level">{data.level}%</span>
-                                </div>
-                                <div className="skill-progress">
-                                    <div
-                                        className="skill-progress-bar"
-                                        style={{ width: `${data.level}%` }}
-                                    ></div>
                                 </div>
                                 <div className="skill-tags">
                                     {data.skills.map((skill, index) => (
