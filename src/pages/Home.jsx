@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useTheme } from '../context/ThemeContext'
-import { FaFilePdf } from 'react-icons/fa'
+import { FaFilePdf, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { MdEmail, MdLocationOn } from 'react-icons/md'
 import BachelorThesis from '../assets/thesis-bachelor.pdf'
 import MasterThesis from '../assets/thesis-master.pdf'
 import introVideoLight from '../assets/intro-light.mp4'
@@ -123,6 +124,41 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Contact Information Section */}
+            <section className="section">
+                <div className="container">
+                    <h2 className="section-title">Contact me</h2>
+                    <div className="contact-info-section">
+                        <div className="contact-buttons">
+                            <a
+                                href="mailto:asja.attanasio@gmail.com"
+                                className="contact-button"
+                            >
+                                <MdEmail size={20} />
+                                <span>Email</span>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/asjaattanasio/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-button"
+                            >
+                                <FaLinkedin size={20} />
+                                <span>LinkedIn</span>
+                            </a>
+                            <a
+                                href="https://github.com/aattanasio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-button"
+                            >
+                                <FaGithub size={20} />
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* PDF Modal */}
             {showPDF && (
