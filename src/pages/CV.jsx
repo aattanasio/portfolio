@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { FaFilePdf } from 'react-icons/fa'
+import { FaFilePdf, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 import CVPdf from '../assets/cv.pdf'
 
 const CV = () => {
@@ -204,6 +205,34 @@ const CV = () => {
                             <li>English - Cambridge FCE scored at C1 Level</li>
                             <li>German - Beginner</li>
                         </ul>
+                    </div>
+
+                    <div className="simple-contact-icons">
+                        <a
+                            href="mailto:asja.attanasio@gmail.com"
+                            className="simple-contact-icon"
+                            aria-label="Email"
+                        >
+                            <MdEmail size={20} />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/asjaattanasio/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="simple-contact-icon"
+                            aria-label="LinkedIn"
+                        >
+                            <FaLinkedin size={20} />
+                        </a>
+                        <a
+                            href="https://github.com/aattanasio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="simple-contact-icon"
+                            aria-label="GitHub"
+                        >
+                            <FaGithub size={20} />
+                        </a>
                     </div>
                 </div>
             </section>

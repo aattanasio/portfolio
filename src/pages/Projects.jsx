@@ -1,5 +1,6 @@
 import React from 'react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaLinkedin } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 const Projects = () => {
     const projects = [
@@ -113,6 +114,34 @@ const Projects = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="simple-contact-icons">
+                        <a
+                            href="mailto:asja.attanasio@gmail.com"
+                            className="simple-contact-icon"
+                            aria-label="Email"
+                        >
+                            <MdEmail size={20} />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/asjaattanasio/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="simple-contact-icon"
+                            aria-label="LinkedIn"
+                        >
+                            <FaLinkedin size={20} />
+                        </a>
+                        <a
+                            href="https://github.com/aattanasio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="simple-contact-icon"
+                            aria-label="GitHub"
+                        >
+                            <FaGithub size={20} />
+                        </a>
                     </div>
                 </div>
             </section>

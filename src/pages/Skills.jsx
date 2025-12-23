@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 const Skills = () => {
     const skillsData = {
@@ -59,6 +61,34 @@ const Skills = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="simple-contact-icons">
+                        <a
+                            href="mailto:asja.attanasio@gmail.com"
+                            className="simple-contact-icon"
+                            aria-label="Email"
+                        >
+                            <MdEmail size={20} />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/asjaattanasio/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="simple-contact-icon"
+                            aria-label="LinkedIn"
+                        >
+                            <FaLinkedin size={20} />
+                        </a>
+                        <a
+                            href="https://github.com/aattanasio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="simple-contact-icon"
+                            aria-label="GitHub"
+                        >
+                            <FaGithub size={20} />
+                        </a>
                     </div>
                 </div>
             </section>

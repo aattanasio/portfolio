@@ -822,6 +822,39 @@ body {
   }
 }
 
+/* Simple Contact Icons */
+.simple-contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.simple-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.simple-contact-icon:hover {
+  border-color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+.simple-contact-icon:active {
+  transform: translateY(0);
+}
+
 .form-group {
   margin-bottom: 1.5rem;
 }
