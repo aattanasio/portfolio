@@ -5,7 +5,16 @@ import { MdEmail } from 'react-icons/md'
 const Projects = () => {
     const projects = [
         {
-            id: 1,
+            id: 2,
+            title: 'Air Quality Dashboard - React Web Application',
+            description: 'A responsive web application for monitoring real-time air quality and weather conditions worldwide. Features interactive search, current AQI readings with health recommendations, 5-day weather forecasts, and animated data visualizations. Includes pollutant breakdowns (PM2.5, PM10, CO, NO₂, O₃, SO₂) with gradient charts and smooth transitions.',
+            technologies: ['React', 'TypeScript', 'Vite', 'Recharts', 'OpenWeather API', 'Vercel', 'CSS3'],
+            timeline: '01/2026',
+            github: 'https://github.com/aattanasio/air-quality-dashboard',
+            demo: 'https://air-quality-dashboard-git-main-asja-attanasios-projects.vercel.app'
+        },
+        {
+            id: 2,
             title: 'GymMe - Flutter Application',
             description: 'A cross-platform Flutter application for managing gym networks, activities, and user bookings. Features role-based access with admin controls for gym management and user interfaces for browsing and booking workout sessions. Includes real-time schedules, location-based search, and integrated payment processing.',
             technologies: ['Flutter', 'Dart', 'Firebase', 'Google Maps API', 'Stripe', 'Cloud Functions', 'Google OAuth'],
@@ -14,7 +23,7 @@ const Projects = () => {
             demo: 'https://app.sampoz.tech'
         },
         {
-            id: 2,
+            id: 3,
             title: 'RAG-based Question Answering System',
             description: 'Comprehensive implementation of advanced NLP techniques for question answering using Retrieval-Augmented Generation (RAG), toxicity detection, topic modeling, and large language model evaluation.',
             technologies: ['Python', 'Hugging Face', 'PyTorch', 'Natural Language Processing'],
@@ -22,7 +31,7 @@ const Projects = () => {
             github: 'https://github.com/martinimarcello00/NLP-project'
         },
         {
-            id: 3,
+            id: 4,
             title: 'TCP/IP Client-Server application',
             description: 'Socket programming in C. Implemented a client-server communication system using TCP/IP sockets in C. Features robust protocol handling and message exchange logic. Includes a detailed project report explaining the architecture, protocol design, and testing methodology.',
             technologies: ['C', 'TCP/IP', 'Socket Programming', 'Client-Server Architecture', 'Protocol Design'],
@@ -30,35 +39,35 @@ const Projects = () => {
             github: 'https://github.com/aattanasio/UniPi/tree/main/Reti%20Informatiche'
         },
         {
-            id: 4,
+            id: 5,
             title: 'Business Economics and Organization',
             description: 'Study of Geox S.p.A. business model: SWOT, costs/revenues, financial indicators, balance sheets, strategic projections. Deliverable: full report and suggestions.',
             technologies: ['Business Model Development', 'Cost and Revenue Analysis', 'Income Statement', 'Financial Statement Analysis', 'Economic and Financial Condition Assessment'],
             timeline: '03/2021 - 06/2021',
         },
         {
-            id: 5,
+            id: 6,
             title: 'Robocup Jr. - Rescue Maze',
             description: 'Design of autonomous LEGO EV3 robots: sensors, pathfinding, object grabbing.',
             technologies: ['Robotics', 'LEGO Mindstorms EV3', 'Path Navigation Algorithms', 'Object Retrieval', 'C++', 'C'],
             timeline: '01/2018 - 10/2018',
         },
         {
-            id: 6,
+            id: 7,
             title: 'ZeroRobotics',
             description: 'Competition with simulators for SPHERES microrobots on the ISS: orbit control, docking, cooperative control.',
             technologies: ['Aerospace Robotics', 'Satellite Programming', 'SPHERES Robots', 'International Space Station', 'C', 'Algorithm Design'],
             timeline: '06/2017 - 07/2017',
         },
         {
-            id: 7,
+            id: 8,
             title: 'Programming the Turing Machine',
             description: 'Turing machine simulator: tape, states, transitions, step-by-step. Motivation: understanding computation models.',
             technologies: ['Turing Machine', 'Automata Theory', 'Computability', 'Algorithm Design', 'Simulator Development'],
             timeline: '02/2017 - 04/2017',
         },
         {
-            id: 8,
+            id: 9,
             title: 'Rome Cup',
             description: 'LEGO NXT robot for Rescue Line competitions: autonomous navigation, object collection, reactive sequences. Strengths: team cohesion, rapid iteration.',
             technologies: ['Robotics', 'LEGO Mindstorms NX', 'Path Navigation Algorithms', 'Object Retrieval', 'C++'],

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaFilePdf, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
-import CVPdf from '../assets/cv.pdf'
+import CVPdf from '../assets/CV-Attanasio-Asja-2026.pdf'
 
 const CV = () => {
     const [showPDF, setShowPDF] = useState(false)
