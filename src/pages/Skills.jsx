@@ -5,17 +5,18 @@ import { MdEmail } from 'react-icons/md'
 const Skills = () => {
     const skillsData = {
         'Programming Languages': {
-            skills: ['JavaScript', 'Python', 'Java', 'C', 'C++', 'PHP', 'Assembly', 'Verilog'],
+            skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C', 'C++', 'PHP', 'Assembly', 'Verilog'],
         },
         'Web and Mobile': {
-            skills: ['React', 'HTML5', 'CSS3', 'Node.js', 'Express', 'Flutter', 'Node-RED', 'JSON', 'XML'],
+            skills: ['React', 'Vite', 'HTML5', 'CSS3', 'Node.js', 'Flutter', 'Node-RED', 'JSON', 'XML'],
         },
         'Databases and Frameworks': {
             skills: ['SQL', 'MySQL', 'Firestore', 'Apache Spark', 'Akka', 'ContikiNG', 'MQTT', 'Agile/Scrum'],
         },
         'Development Tools': {
-            skills: ['Git', 'Visual Studio', 'GCC', 'NetBeans', 'Postman', 'Figma', 'MATLAB', 'MS Office', 'LaTeX'],
+            skills: ['Git', 'Visual Studio', 'GCC', 'NetBeans', 'Postman', 'Figma', 'MATLAB', 'MS Office', 'LaTeX', 'Vercel'],
         }
+
     }
 
     return (
