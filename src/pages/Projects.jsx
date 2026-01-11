@@ -11,7 +11,7 @@ const Projects = () => {
             technologies: ['React', 'TypeScript', 'Vite', 'Recharts', 'OpenWeather API', 'Vercel', 'CSS3'],
             timeline: '01/2026',
             github: 'https://github.com/aattanasio/air-quality-dashboard',
-            demo: 'https://air-quality-dashboard-ten.vercel.app/'
+            demo: 'https://aqi-dashboard.asjaattanasio.it/'
         },
         {
             id: 2,
